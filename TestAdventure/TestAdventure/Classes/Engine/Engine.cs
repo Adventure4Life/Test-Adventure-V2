@@ -21,7 +21,7 @@ namespace TestAdventure
         public static void PlayGame()
         {
             Console.Write("\n> ");
-            CmdInput.GetInput(Console.ReadLine().Trim());
+            UserInput.GetInput(Console.ReadLine());
         }
     }
 }

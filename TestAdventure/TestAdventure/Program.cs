@@ -15,8 +15,8 @@ namespace TestAdventure
 
             while (GameState.GameHasNotEnded())
             {
-                DeBugging.TestSomething();
                 Engine.PlayGame();
+                DeBugging.TestSomething();
             }
 
             // Debugging
