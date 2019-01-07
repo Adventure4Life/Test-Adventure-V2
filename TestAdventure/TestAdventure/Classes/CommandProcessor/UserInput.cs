@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace TestAdventure
@@ -27,7 +28,7 @@ namespace TestAdventure
 
         public static void GetInput(string input)
         {
-            rawInput = input;
+            rawInput = Regex.Replace(input, @"\s+", " ");
             cleanedInputTokens = TextUtils.TokenizeStringList(rawInput);
             stemmedInputTokens = TextUtils.StemWordList(cleanedInputTokens.ToList());
         }
