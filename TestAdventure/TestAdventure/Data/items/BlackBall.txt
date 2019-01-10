@@ -1,0 +1,16 @@
+//--ITEM_NAME: iBlackBall
+//--ITEM_CAN_BE_PICKED_UP: false
+
+//--ROOM_DESCRIPTION_DEFAULT: look room (default)- BLACK
+//--ROOM_DESCRIPTION_DROPPED: look room (dropped)- BLACK
+//--ROOM_DESCRIPTION_GONE: look room (gone)- BLACK
+
+//--GET_ITEM_SUCCESS: Get Success- BLACK
+//--GET_ITEM_NOT_ALLOWED: Get Fail- BLACK
+
+//--NOUN
+black
+
+//--VERB
+get
+kick

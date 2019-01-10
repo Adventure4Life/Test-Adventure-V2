@@ -1,0 +1,36 @@
+//--AREA_NAME: AreaName
+//--AREA_DESCRIPTION: Area Description
+
+//-EXIT_START
+--NAME: exit1
+--IS_OPEN: true
+--LOOK_AREA_OPEN: look area open
+--LOOK_AT_OPEN: Looks at open
+--USE_OPEN: use Open
+//-EXIT_END
+
+//-EXIT_START
+--NAME: exit2
+--IS_OPEN: true
+--LOOK_AREA_OPEN: look area open
+--LOOK_AT_OPEN: look at open
+--USE_OPEN: use open
+//-EXIT_END
+
+//-EXIT_START
+--NAME: exit3
+--IS_OPEN: false
+--LOOK_AREA_CLOSED: look area closed
+--LOOK_AREA_OPEN: look area open
+--LOOK_AT_CLOSED: look at closed
+--LOOK_AT_OPEN: look at open
+--USE_OPEN: use open
+--USE_CLOSED: use closed
+//-EXIT_END
+
+//LIST_OF_ITEMS_IN_AREA--START
+RedBall
+GreenBall
+YellowBall
+BlackBall
+//LIST_OF_ITEMS_IN_AREA--END

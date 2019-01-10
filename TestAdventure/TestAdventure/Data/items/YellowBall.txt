@@ -1,0 +1,16 @@
+//--ITEM_NAME: iYellowBall
+//--ITEM_CAN_BE_PICKED_UP: false
+
+//--ROOM_DESCRIPTION_DEFAULT: look room (default) - YELLOW
+//--ROOM_DESCRIPTION_DROPPED: look room (dropped) - YELLOW
+//--ROOM_DESCRIPTION_GONE: look room (gone) - YELLOW
+
+//--GET_ITEM_SUCCESS: Get Success - YELLOW
+//--GET_ITEM_NOT_ALLOWED: Get Fail - YELLOW
+
+//--NOUN
+yellow
+
+//--VERB
+get
+kick

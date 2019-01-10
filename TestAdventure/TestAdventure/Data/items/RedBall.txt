@@ -1,0 +1,16 @@
+//--ITEM_NAME: iRedBall
+//--ITEM_CAN_BE_PICKED_UP: false
+
+//--ROOM_DESCRIPTION_DEFAULT: look room (default) - RED
+//--ROOM_DESCRIPTION_DROPPED: look room (dropped) - RED
+//--ROOM_DESCRIPTION_GONE: look room (gone) - RED
+
+//--GET_ITEM_SUCCESS: Get Success - RED
+//--GET_ITEM_NOT_ALLOWED: Get Fail - RED
+
+//--NOUN
+red
+
+//--VERB
+get
+kick

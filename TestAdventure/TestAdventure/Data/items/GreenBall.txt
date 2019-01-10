@@ -1,0 +1,16 @@
+//--ITEM_NAME: iGreenBall
+//--ITEM_CAN_BE_PICKED_UP: false
+
+//--ROOM_DESCRIPTION_DEFAULT: look room (default) - GREEN
+//--ROOM_DESCRIPTION_DROPPED: look room (dropped) - GREEN
+//--ROOM_DESCRIPTION_GONE: look room (gone) - GREEN
+
+//--GET_ITEM_SUCCESS: Get Success - GREEN
+//--GET_ITEM_NOT_ALLOWED: Get Fail - GREEN
+
+//--NOUN
+green
+
+//--VERB
+get
+kick

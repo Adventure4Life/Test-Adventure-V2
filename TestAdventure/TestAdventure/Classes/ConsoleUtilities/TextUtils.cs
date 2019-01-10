@@ -11,7 +11,8 @@ namespace TestAdventure
     {
        static EnglishPorter2Stemmer StemWord = new EnglishPorter2Stemmer();
 
-        public static List<string> TokenizeStringList (string input)
+        #region Tokenisarion - CleanWord - Stemming
+        public static string[] TokenizeStringList (string input)
         {
             List<string> cleanedInputList = new List<string>();
             string[] raw_cleanedInputString = input.ToLower().Trim().Split(null);
@@ -24,7 +25,10 @@ namespace TestAdventure
                     if (s != "") cleanedInputList.Add(s);
                 }
             }
-            return cleanedInputList;
+
+            string[] copyList2String = new string[cleanedInputList.Count];
+            cleanedInputList.CopyTo(copyList2String);
+            return copyList2String;
         }
 
         public static string CleanedWord(string word)
@@ -33,18 +37,24 @@ namespace TestAdventure
             return string.Join("", word.Where(s => !banList.Contains(s)));
         }
 
-        public static List<string> StemWordList (List<string> wordlist)
+        public static string[] StemWordList (string[] wordlist)
         {
-            for (int i = 0; i < wordlist.Count; i++)
+            //string[] copyArray = new string[wordlist.Length];
+            //Array.Copy(wordlist, copyArray, wordlist.Length);
+            string[] copyArray = wordlist.ToArray();
+            for (int i = 0; i < copyArray.Length; i++)
             {
-                string StemValue = StemWord.Stem(wordlist[i]).Value;
-                wordlist[i] = StemValue;
+                string StemValue = StemWord.Stem(copyArray[i]).Value;
+                copyArray[i] = StemValue;
             }
-            return wordlist;
+            return copyArray;
         }
     }
+    #endregion
+
 }
 
+#region working and junk code
 /*
         /* My Original Cleaning Method.. I replaced with with a smaller code from StackExchange
         public static string CleanedWord(string word)
@@ -69,3 +79,4 @@ namespace TestAdventure
                 return s;
             }
         }*/
+#endregion

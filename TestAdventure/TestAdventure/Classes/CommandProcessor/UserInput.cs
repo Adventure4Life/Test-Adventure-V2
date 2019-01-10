@@ -11,26 +11,26 @@ namespace TestAdventure
     {
         //Public Variables
         private static string rawInput;
-        private static List<string> cleanedInputTokens;
-        private static List<string> stemmedInputTokens;
+        private static string[] cleanedInputTokens;
+        private static string[] stemmedInputTokens;
 
         #region Get-ers
         public static string GetRawInput()
         { return rawInput; }
 
-        public static List<string> GetCleanedInputTokens()
+        public static string[] GetCleanedInputTokens()
         { return cleanedInputTokens; }
 
-        public static List<string> GetStemmedInputTokens()
+        public static string[] GetStemmedInputTokens()
         { return stemmedInputTokens; }
         #endregion
 
 
         public static void GetInput(string input)
         {
-            rawInput = Regex.Replace(input, @"\s+", " ");
+            rawInput = Regex.Replace(input, @"\s+", " "); //make sure there is only 1 white space between each word.
             cleanedInputTokens = TextUtils.TokenizeStringList(rawInput);
-            stemmedInputTokens = TextUtils.StemWordList(cleanedInputTokens.ToList());
+            stemmedInputTokens = TextUtils.StemWordList(cleanedInputTokens);
         }
     }
 }
