@@ -50,6 +50,7 @@
     <Compile Include="Classes\ConsoleUtilities\PorterStem\StemmedWord.cs" />
     <Compile Include="Classes\DataProcessing\DataReader.cs" />
     <Compile Include="Classes\DataProcessing\DataRead_Area.cs" />
+    <Compile Include="Classes\DataProcessing\DataRead_Items.cs" />
     <Compile Include="Classes\DataProcessing\ReadDataFile.cs" />
     <Compile Include="Classes\Engine\Engine.cs" />
     <Compile Include="Classes\Engine\GameState.cs" />

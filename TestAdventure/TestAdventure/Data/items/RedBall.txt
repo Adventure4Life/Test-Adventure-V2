@@ -8,9 +8,11 @@
 //--GET_ITEM_SUCCESS: Get Success - RED
 //--GET_ITEM_NOT_ALLOWED: Get Fail - RED
 
-//--NOUN
+//--NOUN-START
 red
+//--NOUN-END
 
-//--VERB
+//--VERB-START
 get
 kick
+//--VERB-END

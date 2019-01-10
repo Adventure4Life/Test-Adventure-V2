@@ -8,9 +8,11 @@
 //--GET_ITEM_SUCCESS: Get Success - GREEN
 //--GET_ITEM_NOT_ALLOWED: Get Fail - GREEN
 
-//--NOUN
+//--NOUN-START
 green
+//--NOUN-END
 
-//--VERB
+//--VERB-START
 get
 kick
+//--VERB-END

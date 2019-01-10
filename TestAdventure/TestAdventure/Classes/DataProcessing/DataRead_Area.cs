@@ -75,7 +75,24 @@ namespace TestAdventure
             area.SetName(ReadDataFile.Read_SingleLine(areaKeys.areaName, fileData));
             area.SetDescription(ReadDataFile.Read_SingleLine(areaKeys.areaDescription, fileData));
             ProcessAllExits();
+            ProcessAllItems();
         }
+
+        private void ProcessAllItems()
+        {
+            ExitKeys exitKeys = new ExitKeys();
+            Dictionary<string, object> BracketData = ReadDataFile.Read_BracketCount(areaKeys.itemsStart, areaKeys.itemsEnd, fileData); //("count", bracketCount); | ("startList", bracketIndex_Start); | ("endList", bracketIndex_End);
+
+            List<int> bracketIndex_Start = BracketData["startList"] as List<int>;
+            List<int> bracketIndex_End = BracketData["endList"] as List<int>;
+
+            for (int i = bracketIndex_Start[0]+1; i < bracketIndex_End[0]; i++)
+            {
+                DataRead_Items BuildItem = new DataRead_Items(fileData[i]);
+                area.AddItem(BuildItem.GetItem());
+            }
+        }
+
 
         private void ProcessAllExits()
         {
