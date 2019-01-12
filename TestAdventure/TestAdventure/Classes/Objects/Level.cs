@@ -14,7 +14,7 @@ namespace TestAdventure
         public static void InitiliseLevel()
         {
             DataReader ReadData = new DataReader();
-            Layout[0, 0] = ReadData.ImportAreaData("TestArea");
+            Layout[0, 0] = ReadData.ImportAreaData("CommandTestRoom");
         }
     }
 }

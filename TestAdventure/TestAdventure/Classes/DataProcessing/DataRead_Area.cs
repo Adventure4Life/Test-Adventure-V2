@@ -9,7 +9,8 @@ namespace TestAdventure
     class AreaKeys
     {
         public string areaName { get; }
-        public string areaDescription { get; }
+        public string areaLook_Description { get; }
+        public string areaLook_Enter { get; }
 
         public string exitStart { get; }
         public string exitEnd { get; }
@@ -20,7 +21,8 @@ namespace TestAdventure
         public AreaKeys()
         {
             areaName = "//--AREA_NAME:";
-            areaDescription = "//--AREA_DESCRIPTION:";
+            areaLook_Description = "//--AREA_LOOK:";
+            areaLook_Enter = "//--AREA_ENTER:";
 
             exitStart = "//-EXIT_START";
             exitEnd = "//-EXIT_END";
@@ -73,9 +75,10 @@ namespace TestAdventure
         private void ProcessData()
         {
             area.SetName(ReadDataFile.Read_SingleLine(areaKeys.areaName, fileData));
-            area.SetDescription(ReadDataFile.Read_SingleLine(areaKeys.areaDescription, fileData));
-            ProcessAllExits();
-            ProcessAllItems();
+            area.SetLook_Description(ReadDataFile.Read_SingleLine(areaKeys.areaLook_Description, fileData));
+            area.SetLook_Description(ReadDataFile.Read_SingleLine(areaKeys.areaLook_Enter, fileData));
+            //ProcessAllExits();
+            //ProcessAllItems();
         }
 
         private void ProcessAllItems()

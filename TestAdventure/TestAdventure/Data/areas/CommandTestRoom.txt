@@ -1,0 +1,9 @@
+//--AREA_NAME: CommandTestRoom
+
+//--AREA_LOOK: The floor stretches into the unknown as it enters the blackness. There are no features, besides the grid pattern and no sounds. Nothing. You walk forward and feel as if you are not even moving. You are walking in place, like upon a treadmill.
+
+//--AREA_ENTER: You are standing in a cavernous expanse, where the light itself fails to reach either the ceilings or the walls, giving you a strange sensation of floating as if you're suspended on a flat plane in a black nothingness. There is a slight grey grid pattern on the floor. You can see the evenly spaces lines training off until they disappear into the feathered black. In the very centre of the plain that you can not bring yourself to call a floor, you see two objects. A silver looking call and a small red box.
+
+//LIST_OF_ITEMS_IN_AREA--START
+SilverBall
+//LIST_OF_ITEMS_IN_AREA--END

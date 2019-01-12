@@ -1,0 +1,15 @@
+//--ITEM_NAME: Silver Ball
+//--ITEM_CAN_BE_PICKED_UP: false
+
+//--ROOM_DESCRIPTION_DEFAULT: In the middle of the toom is a silver ball
+
+//--GET_ITEM_NOT_ALLOWED: As you reach out for the ball you seem to move without walking and your arms can suddenly reach it. They pass right through with no resistance. Leaving only a slight rippling in the reflection that quickly stills into its original mirror-like surface.
+
+//--NOUN-START
+black
+//--NOUN-END
+
+//--VERB-START
+get
+kick
+//--VERB-END

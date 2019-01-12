@@ -16,13 +16,22 @@ namespace TestAdventure
 
         public static void StartScreen()
         {
-            //TODO : Set a start Screen for the game initialization before main loop 
+            //TODO : Set a start Screen for the game initialization before main loop
+            PrintBuffer.PrintFrame();
+            PrintBuffer.PrintType();
         }
 
         public static void PlayGame()
         {
+            //areaActivate();
             Console.Write("\n> ");
             UserInput.GetInput(Console.ReadLine());
+        }
+
+        private static void areaActivate()
+        {
+            //Player.GetCurrentArea().LookArea();
+            //PrintBuffer.PrintScreen();
         }
     }
 }

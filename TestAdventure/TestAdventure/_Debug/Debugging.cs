@@ -8,16 +8,16 @@ namespace TestAdventure
 {
     static class DeBugging
     {
-        public static void TestSssomething()
-        {
-            ///DataReader.ImportRoomData("TestArea");
-        }
-
         public static void TestSomething()
         {
-            Console.WriteLine(Level.Layout[0, 0].GetName());
-            Console.WriteLine(Level.Layout[0, 0].GetDescription());
-            foreach (Exit exit in Level.Layout[0, 0].GetExits())
+            //Console.WriteLine(TextUtils.WordWrap("As you reach out for the ball you seem to move without walking and your arms can suddenly reach it. They pass right through with no resistance. Leaving only a slight rippling in the reflection that quickly stills into its original mirror-like surface."));
+        }
+
+        public static void TestOriginalDataFiles()
+        {
+            Console.WriteLine(Level.Layout[0, 0].Name());
+            Console.WriteLine(Level.Layout[0, 0].LookDescription());
+            foreach (Exit exit in Level.Layout[0, 0].Exits())
             {
                 Console.WriteLine("\n" + exit.name);
                 Console.WriteLine(exit.open);
@@ -30,7 +30,7 @@ namespace TestAdventure
             }
             
 
-            foreach (Items item in Level.Layout[0, 0].GetItems())
+            foreach (Items item in Level.Layout[0, 0].ItemList())
             {
                 Console.WriteLine("\n"+item.name);
                 Console.WriteLine(item.PickedupAllowed);
