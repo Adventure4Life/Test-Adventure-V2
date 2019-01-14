@@ -19,11 +19,13 @@ namespace TestAdventure
             //TODO : Set a start Screen for the game initialization before main loop
             PrintBuffer.PrintFrame();
             PrintBuffer.PrintType();
+            UserInput.AnyKeyContinue();
+            PrintBuffer.PrintFrame();
         }
 
         public static void PlayGame()
         {
-            //areaActivate();
+            AreaUtilities.ActivateArea(Player.GetCurrentArea());
             Console.Write("\n> ");
             UserInput.GetInput(Console.ReadLine());
         }

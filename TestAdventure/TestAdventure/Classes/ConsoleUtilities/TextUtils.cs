@@ -82,7 +82,7 @@ namespace TestAdventure
                 }
                 result += "\n";
             }
-            return result.TrimEnd();
+            return result;
         }
         public static string WordWrap(List<string> text)
         {

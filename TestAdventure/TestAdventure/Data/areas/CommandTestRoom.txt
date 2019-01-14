@@ -1,8 +1,16 @@
 //--AREA_NAME: CommandTestRoom
 
-//--AREA_LOOK: The floor stretches into the unknown as it enters the blackness. There are no features, besides the grid pattern and no sounds. Nothing. You walk forward and feel as if you are not even moving. You are walking in place, like upon a treadmill.
+//--AREA_CINAMATIC_START:
+You stop, catching your breath. Wondering how long exactly you have been jogging. Your breathing easily so conclude it couldn't have been long but you can not shake the feeling that it has actually has been long. A long time. An age. An endless, timeless age. 
 
-//--AREA_ENTER: You are standing in a cavernous expanse, where the light itself fails to reach either the ceilings or the walls, giving you a strange sensation of floating as if you're suspended on a flat plane in a black nothingness. There is a slight grey grid pattern on the floor. You can see the evenly spaces lines training off until they disappear into the feathered black. In the very centre of the plain that you can not bring yourself to call a floor, you see two objects. A silver looking call and a small red box.
+Of nothing.
+
+Coming to a halt you take in your surroundings. The floor stretches away to an unknown distance for it disappears into pitched blackness. There are no features in this space, besides the floor's grid pattern, as well as a Sphere and a Cube, which sit before you. The blackness is on all sides and above you. There is nothing, not even sound. You find yourself jogging again yet remain in your feathered spotlight, despite a slow but steady gate. You feel no perception of actual movement. This leaves you with a distinct sensation that you are upon a treadmill of some kind. An effect compounded by the oddity of the two objects before you. There they sit, a Silver Sphere and a smaller Red Cube which remain forever a distance ahead of you. Frozen in space just out of reach.
+
+Only now do you realise that the noise is more than a quiet. It is the absence of sound. A sound as black and the void beyond you. A sound that eats all sound. You can not hear your own breath as it leaves your body or the sound of your feet. Clapping loudly produces nothing but pain. Yet slowly your ear turns inwards to the sounds inside yourself. At first, it was your own heart, then the audible popping noise of your lungs filling with air. Blood rushing through your veins. Bones creaking and cracking. It becomes deafening. Your heart beats faster and louder as panic starts to take hold for you think the noise will enclose you becoming your entire world.
+//--AREA_CINAMATIC_END:
+
+//--AREA_LOOK: You are standing in a cavernous expanse, where the light itself fails to reach either the ceilings or the walls, giving you a strange sensation of floating as if you're suspended on this flat plane in a black nothingness. There is a slight grey grid pattern on the floor. You can see the evenly spaces lines training off until they disappear into the feathered blackness that sarounds the illuminated platform upon which yu stand. In the very centre of the plain that you can not bring yourself to call a floor, you see two objects. A silver looking call and a small red box.
 
 //LIST_OF_ITEMS_IN_AREA--START
 SilverBall

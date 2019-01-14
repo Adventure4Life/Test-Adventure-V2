@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C40CBFB-B5B0-4843-8447-829DC2779B94}</ProjectGuid>
+    <ProjectGuid>{91B6C923-0809-413E-911D-860BA41FCE4F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TestAdventure</RootNamespace>
-    <AssemblyName>TestAdventure</AssemblyName>
+    <RootNamespace>TestIngGround</RootNamespace>
+    <AssemblyName>TestIngGround</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,33 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\CommandProcessor\UserInput.cs" />
-    <Compile Include="Classes\ConsoleUtilities\PorterStem\EnglishPorter2Stemmer.cs" />
-    <Compile Include="Classes\ConsoleUtilities\PorterStem\IPorter2Stemmer.cs" />
-    <Compile Include="Classes\ConsoleUtilities\PorterStem\IStemmer.cs" />
-    <Compile Include="Classes\ConsoleUtilities\PorterStem\StemmedWord.cs" />
-    <Compile Include="Classes\ConsoleUtilities\PrintBuffer.cs" />
-    <Compile Include="Classes\ConsoleUtilities\FrameBuffer.cs" />
-    <Compile Include="Classes\DataProcessing\DataReader.cs" />
-    <Compile Include="Classes\DataProcessing\DataRead_Area.cs" />
-    <Compile Include="Classes\DataProcessing\DataRead_Items.cs" />
-    <Compile Include="Classes\DataProcessing\ReadDataFile.cs" />
-    <Compile Include="Classes\Engine\Engine.cs" />
-    <Compile Include="Classes\Engine\GameState.cs" />
-    <Compile Include="Classes\ConsoleUtilities\TextUtils.cs" />
-    <Compile Include="Classes\Objects\AreaUtilities.cs" />
-    <Compile Include="Classes\Objects\Exit.cs" />
-    <Compile Include="Classes\Objects\Items.cs" />
-    <Compile Include="Classes\Objects\Level.cs" />
-    <Compile Include="Classes\Objects\Area.cs" />
-    <Compile Include="Classes\Player\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_Debug\DeBugging.cs" />
+    <Compile Include="ScreenBufferTests\WaitForKey Tests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScreenBufferTests\WaitForKey Tests.Designer.cs">
+      <DependentUpon>WaitForKey Tests.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

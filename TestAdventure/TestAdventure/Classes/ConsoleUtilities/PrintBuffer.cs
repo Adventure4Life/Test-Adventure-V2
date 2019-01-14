@@ -9,7 +9,7 @@ namespace TestAdventure
 {
     static class PrintBuffer
     {
-        private static bool breakLoop = false;
+        public static bool breakLoop { get; set; } = false;
 
         /// <summary>
         /// PrintStory : Prints out a long string of text Character by Character. Pressing any key will skip to end!
@@ -17,7 +17,7 @@ namespace TestAdventure
         //static private bool breakLoop = false;
         public static void PrintTyperWritter(string line)
         {
-            line = line + "\n";
+            //line = line + "\n";
             Console.CursorVisible = false;
             if (!breakLoop)
             {
@@ -28,13 +28,16 @@ namespace TestAdventure
                     {
                         breakLoop = true;
                         Console.Write(line.Substring(i, line.Length - i));
+                        //UserInput.ClearInput();
                         break;
                     }
 
                     // If we are at the end of the line or the breakLoop is true break out of for loop with out printing more chars.
                     if (breakLoop || i == line.Length)
                     {
-                        Console.ReadKey(); break;
+                        Console.ReadKey(true);
+                        //UserInput.ClearInput();
+                        break;
                     }
 
                     // Print each char in the line
@@ -50,15 +53,13 @@ namespace TestAdventure
         static public void PrintFrame()
         {
             Console.Clear();
-            PrintScreen_Frame();
+            foreach (var line in FrameBuffer.frame)
+            {
+                Console.WriteLine(line);
+            }
         }
 
         static public void PrintType()
-        {
-            PrintScreen_Type();
-        }
-
-        static private void PrintScreen_Type()
         {
             //PrintTyperWritter(TextUtils.WordWrap(FrameBuffer.type));
             foreach (var line in FrameBuffer.type)
@@ -66,15 +67,8 @@ namespace TestAdventure
                 PrintTyperWritter(TextUtils.WordWrap(line));
                 //PrintTyperwritter(line);
             }
+            breakLoop = false;
+            UserInput.ClearInput();
         }
-
-        static private void PrintScreen_Frame()
-        {
-            foreach (var line in FrameBuffer.frame)
-            {
-                Console.WriteLine(line);
-            }
-        }
-
     }
 }

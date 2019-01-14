@@ -65,22 +65,22 @@ namespace TestAdventure
             itemKeys = new ItemKeys();
             filePath = @"Data\items\";
             fileName = name;
-            fileData = ReadDataFile.Read_DataFile(filePath, fileName);
+            fileData = ReadDataFile.Load_DataFile(filePath, fileName);
             ProcessData();
         }
 
         private void ProcessData()
         {
             //Console.WriteLine("Processing : " + fileName);
-            item.name = ReadDataFile.Read_SingleLine(itemKeys.itemName, fileData);
-            item.PickedupAllowed = ReadDataFile.Read_SingleLine(itemKeys.itemCanBePickedip, fileData).Equals("true");
+            item.name = ReadDataFile.Read_RawSingleLine(itemKeys.itemName, fileData);
+            item.PickedupAllowed = ReadDataFile.Read_RawSingleLine(itemKeys.itemCanBePickedip, fileData).Equals("true");
 
-            item.description_Default = ReadDataFile.Read_SingleLine(itemKeys.DescriptionDefault, fileData);
-            item.description_Dropped = ReadDataFile.Read_SingleLine(itemKeys.DescriptionDropped, fileData);
-            item.description_Gone = ReadDataFile.Read_SingleLine(itemKeys.DescriptionGone, fileData);
+            item.description_Default = ReadDataFile.Read_RawSingleLine(itemKeys.DescriptionDefault, fileData);
+            item.description_Dropped = ReadDataFile.Read_RawSingleLine(itemKeys.DescriptionDropped, fileData);
+            item.description_Gone = ReadDataFile.Read_RawSingleLine(itemKeys.DescriptionGone, fileData);
 
-            item.getItem_Success = ReadDataFile.Read_SingleLine(itemKeys.getSuccess, fileData);
-            item.getItem_NotAllowed = ReadDataFile.Read_SingleLine(itemKeys.getNotAllowed, fileData);
+            item.getItem_Success = ReadDataFile.Read_RawSingleLine(itemKeys.getSuccess, fileData);
+            item.getItem_NotAllowed = ReadDataFile.Read_RawSingleLine(itemKeys.getNotAllowed, fileData);
         }
     }
 }

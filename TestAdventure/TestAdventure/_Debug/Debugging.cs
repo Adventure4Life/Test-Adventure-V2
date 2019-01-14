@@ -65,7 +65,7 @@ namespace TestAdventure
         {
             Console.CursorVisible = false;
             Console.WriteLine("\n*** Press Any Key to Exit ***");
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
     }
 }

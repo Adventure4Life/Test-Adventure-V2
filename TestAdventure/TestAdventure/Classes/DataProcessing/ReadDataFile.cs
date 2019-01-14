@@ -9,7 +9,13 @@ namespace TestAdventure
 {
     static class ReadDataFile
     {
-        public static List<string> Read_DataFile(string path, string filename)
+        /// <summary>
+        /// Reads an entire data file into memory. Each line stored in an element of List<string>
+        /// </summary>
+        /// <param name="path">Relitive Path to FileName from Application ExE</param>
+        /// <param name="filename">Name of File to read</param>
+        /// <returns></returns>
+        public static List<string> Load_DataFile(string path, string filename)
         {
             List<string> ReadData_rawAll = new List<string>();
             filename = filename + ".txt";
@@ -17,15 +23,20 @@ namespace TestAdventure
 
             foreach (string line in File.ReadLines(fullPath))
             {
-                if (line != "")
-                {
+                //if (line != "")
+                //{
                     ReadData_rawAll.Add(line);
-                }
+                //}
             }
             return ReadData_rawAll;
         }
-
-        public static string Read_SingleLine(string uniqueKeyword, List<string> fileData)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="uniqueKeyword"></param>
+        /// <param name="fileData"></param>
+        /// <returns></returns>
+        public static string Read_RawSingleLine(string uniqueKeyword, List<string> fileData)
         {
             for (int i = 0; i < fileData.Count; i++)
             {
@@ -36,6 +47,41 @@ namespace TestAdventure
                 }
             }
             return null;
+        }
+
+        private static string cleanCatagorieTxT(string line, string keyWord)
+        {
+            if (line.StartsWith(keyWord))
+            {
+                int s = keyWord.Length;
+                int l = line.Length - keyWord.Length;
+                line = line.Substring(s, l);
+            }
+            return line.Trim();
+        }
+        
+        // This finds the index value for the start and the end of any unique Brackets.
+        public static int[] FindUniqueBrackets(string start, string end, List<string> fileData)
+        {
+            int[] found = new int[2];
+            for (int i = 0; i < fileData.Count; i++)
+            {
+                if (fileData[i].StartsWith(start)) { found[0] = i; }
+                if (fileData[i].StartsWith(end)) { found[1] = i; }
+            }
+            return found;
+        }
+        
+        // Reads full line data between index values of the Brackets
+        public static List<string> Read_Cinamatic (int start, int end, List<string> fileData)
+        {
+            List<string> data = new List<string>();
+
+            for (int i = start+1; i < end; i++)
+            {
+                data.Add(fileData[i].Trim());
+            }
+            return data;
         }
 
         public static string ReadData_LinesInsideBrackets(string uniqueKeyword, List<string> fileData, int start, int end)
@@ -49,18 +95,6 @@ namespace TestAdventure
                 }
             }
             return null;
-        }
-        
-
-        private static string cleanCatagorieTxT(string line, string keyWord)
-        {
-            if (line.StartsWith(keyWord))
-            {
-                int s = keyWord.Length;
-                int l = line.Length - keyWord.Length;
-                line = line.Substring(s, l);
-            }
-            return line.Trim();
         }
 
         public static Dictionary<string, object> Read_BracketCount(string BracketStart_Key, string BracketEnd_Key, List<string> fileData)

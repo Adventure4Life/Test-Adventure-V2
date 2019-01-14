@@ -10,7 +10,9 @@ namespace TestAdventure
     {
         public string areaName { get; }
         public string areaLook_Description { get; }
-        public string areaLook_Enter { get; }
+
+        public string areaCinamatic_Start { get; }
+        public string areaCinamatic_End { get; }
 
         public string exitStart { get; }
         public string exitEnd { get; }
@@ -22,7 +24,9 @@ namespace TestAdventure
         {
             areaName = "//--AREA_NAME:";
             areaLook_Description = "//--AREA_LOOK:";
-            areaLook_Enter = "//--AREA_ENTER:";
+
+            areaCinamatic_Start = "//--AREA_CINAMATIC_START:";
+            areaCinamatic_End = "//--AREA_CINAMATIC_END:";
 
             exitStart = "//-EXIT_START";
             exitEnd = "//-EXIT_END";
@@ -68,22 +72,31 @@ namespace TestAdventure
             exitKeys = new ExitKeys();
             filePath = @"Data\areas\";
             fileName = name;
-            fileData = ReadDataFile.Read_DataFile(filePath, fileName);
+            fileData = ReadDataFile.Load_DataFile(filePath, fileName).ToList();
             ProcessData();
         }
 
         private void ProcessData()
         {
-            area.SetName(ReadDataFile.Read_SingleLine(areaKeys.areaName, fileData));
-            area.SetLook_Description(ReadDataFile.Read_SingleLine(areaKeys.areaLook_Description, fileData));
-            area.SetLook_Description(ReadDataFile.Read_SingleLine(areaKeys.areaLook_Enter, fileData));
+            area.SetName(ReadDataFile.Read_RawSingleLine(areaKeys.areaName, fileData));
+            area.SetLook_Description(ReadDataFile.Read_RawSingleLine(areaKeys.areaLook_Description, fileData));
+            area.SetCinimatic(BetweenUniqueBrackets(areaKeys.areaCinamatic_Start, areaKeys.areaCinamatic_End));
             //ProcessAllExits();
             //ProcessAllItems();
         }
 
+        //Between Brackets, Read RAW lines into a List<string>
+        private List<string> BetweenUniqueBrackets(string start, string end)
+        {
+            List<string> data = new List<string>();
+            int[] brackets = ReadDataFile.FindUniqueBrackets(start, end, fileData);
+            data = ReadDataFile.Read_Cinamatic(brackets[0], brackets[1], fileData);
+            return data;
+        }
+
         private void ProcessAllItems()
         {
-            ExitKeys exitKeys = new ExitKeys();
+            //ExitKeys exitKeys = new ExitKeys();
             Dictionary<string, object> BracketData = ReadDataFile.Read_BracketCount(areaKeys.itemsStart, areaKeys.itemsEnd, fileData); //("count", bracketCount); | ("startList", bracketIndex_Start); | ("endList", bracketIndex_End);
 
             List<int> bracketIndex_Start = BracketData["startList"] as List<int>;
@@ -130,16 +143,5 @@ namespace TestAdventure
 
             return exit;
         }
-
-        /*private void ProcessRoomData_AllExits()
-        {
-            exitAmount = DataReader.ReadData_BracketCount(roomKeys.exitStart, roomKeys.exitEnd);
-            for (int i = 0; i < exitAmount; i++)
-            {
-                area.SetArea_AddExit(ProcessExitsFromArea(DataReader.BracketIndex_Start[i], DataReader.BracketIndex_End[i]));
-            }
-            DataReader.ClearBrackets();
-        }*/
-
     }
 }

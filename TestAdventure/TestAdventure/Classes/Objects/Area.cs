@@ -11,7 +11,7 @@ namespace TestAdventure
         //Data Reading Variables.
         private string areaName;
         private string areaLook_Description;
-        private string areaLook_enter;
+        private List<string> cinimatic;
         private List<Exit> exitsFromArea;
         private List<Items> itemsInRoom;
 
@@ -24,7 +24,7 @@ namespace TestAdventure
             // Data Reading variables
             areaName = "<areaName goes here>";
             areaLook_Description = "<description goes here>";
-            areaLook_enter = "<areaLook_Description you only see once when you enter the room>";
+            cinimatic = new List<string>();
             exitsFromArea = new List<Exit>();
             itemsInRoom = new List<Items>();
 
@@ -32,31 +32,28 @@ namespace TestAdventure
             FirstTimeEntered = true;
         }
 
-        #region Variable Properties - Get'er and Set'ers
-        #region variable properties (Get'ers)
+        // Data variables
         public string Name() => areaName;
         public string LookDescription() => areaLook_Description; 
-        public string LookEnter() => areaLook_enter; 
+        public List<string> Cinamatic() => cinimatic; 
         public List<Exit> Exits() => exitsFromArea;
         public List<Items> ItemList() { return itemsInRoom;}
-        #endregion
 
-        #region variable properties (Set'ers)
+        // Switch Variables
+        public bool sCinamaticHasPlayed { get; set; } = false;
+
         public void SetName(string importLine)
         {
             areaName = importLine;
         }
-
         public void SetLook_Description(string importLine)
         {
             areaLook_Description = importLine;
         }
-        public void SetLook_Enter(string importLine)
+        public void SetCinimatic(List<string> c)
         {
-            areaLook_enter = importLine;
+            cinimatic = new List<string>(c);
         }
-        #endregion
-        #endregion
 
         public void AddExit(Exit exit)
         {

@@ -37,7 +37,6 @@ namespace TestAdventure
             f.Add(@"");
             f.Add(@"                                                  (A Learning Project to explore C# by A4L)");
             f.Add("");
-                       
             frame = f.ToList();
 
             List<string> t = new List<string>();
@@ -49,6 +48,8 @@ namespace TestAdventure
             t.Add("");
             t.Add("Have Fun");
             t.Add("  --A4L");
+            t.Add("");
+            //t.Add("                                                    Press Any-Key to Continue");
 
             type = t.ToList();
         }

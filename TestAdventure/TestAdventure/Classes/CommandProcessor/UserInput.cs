@@ -32,5 +32,32 @@ namespace TestAdventure
             cleanedInputTokens = TextUtils.TokenizeStringList(rawInput);
             stemmedInputTokens = TextUtils.StemWordList(cleanedInputTokens);
         }
+
+        public static void AnyKeyContinue()
+        {
+            Console.CursorVisible = false;
+            //Console.Write("                                                    Press Any-Key to Continue");
+            Console.Write("\n\n");
+            Pause_AnyKey();
+            Console.CursorVisible = true;
+        }
+        #region Pause for AnyKey / Clear Input Buffer
+        /// <summary>
+        /// Wait for user input before continuing.
+        /// </summary>
+        public static void Pause_AnyKey()
+        {
+            do { } // do nothing in here.. just loop so it acts like a pause
+            while (!Console.KeyAvailable); // when a key is pressed it breaks the loop
+            ClearInput();
+        }
+        /// <summary>
+        /// Clear the user input buffer.
+        /// </summary>
+        public static void ClearInput()
+        {   //Loop through any inputs in the input buffer and "spend them" doing nothing.
+            while (Console.KeyAvailable) { Console.ReadKey(true); }
+        }
+        #endregion
     }
 }
