@@ -10,7 +10,11 @@ namespace TestAdventure
     {
         public static void TestSomething()
         {
-            //Console.WriteLine(TextUtils.WordWrap("As you reach out for the ball you seem to move without walking and your arms can suddenly reach it. They pass right through with no resistance. Leaving only a slight rippling in the reflection that quickly stills into its original mirror-like surface."));
+            Console.WriteLine(CommandDictonary.GetCommandList().Count);
+            foreach (KeyValuePair<string, string> item in CommandDictonary.GetCommandList())
+            {
+                Console.WriteLine("{0} : {1}", item.Key, item.Value);
+            }
         }
 
         public static void TestOriginalDataFiles()

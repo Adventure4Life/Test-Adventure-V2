@@ -30,12 +30,6 @@ namespace TestAdventure
             }
             return ReadData_rawAll;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="uniqueKeyword"></param>
-        /// <param name="fileData"></param>
-        /// <returns></returns>
         public static string Read_RawSingleLine(string uniqueKeyword, List<string> fileData)
         {
             for (int i = 0; i < fileData.Count; i++)
@@ -78,6 +72,17 @@ namespace TestAdventure
             List<string> data = new List<string>();
 
             for (int i = start+1; i < end; i++)
+            {
+                data.Add(fileData[i].Trim());
+            }
+            return data;
+        }
+
+        public static List<string> Read_WordLists(int start, int end, List<string> fileData)
+        {
+            List<string> data = new List<string>();
+
+            for (int i = start + 1; i < end; i++)
             {
                 data.Add(fileData[i].Trim());
             }

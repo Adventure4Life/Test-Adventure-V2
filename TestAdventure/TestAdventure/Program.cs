@@ -11,7 +11,7 @@ namespace TestAdventure
         static void Main(string[] args)
         {
             Engine.Initilise();
-            Engine.StartScreen();
+            //Engine.StartScreen();
 
             while (GameState.GameHasNotEnded())
             {

@@ -21,6 +21,5 @@ namespace TestAdventure
         {
             return Level.Layout[PosX, PosY];
         }
-
     }
 }

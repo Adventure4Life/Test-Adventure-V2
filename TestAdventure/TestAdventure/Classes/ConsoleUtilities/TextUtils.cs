@@ -38,13 +38,28 @@ namespace TestAdventure
         }
         #endregion
 
-        //Stemming List<string>
-        public static string[] StemWordList (string[] wordlist)
+        //Stemming string[]
+        public static string[] StemWordList(string[] wordlist)
         {
             //string[] copyArray = new string[wordlist.Length];
             //Array.Copy(wordlist, copyArray, wordlist.Length);
             string[] copyArray = wordlist.ToArray();
             for (int i = 0; i < copyArray.Length; i++)
+            {
+                string StemValue = StemWord.Stem(copyArray[i]).Value;
+                copyArray[i] = StemValue;
+            }
+            return copyArray;
+        }
+
+        //Stemming List<string>
+        public static List<string> StemWordList(List<string> wordlist)
+        {
+            //string[] copyArray = new string[wordlist.Length];
+            //Array.Copy(wordlist, copyArray, wordlist.Length);
+            //string[] copyArray = wordlist.ToArray();
+            List<string> copyArray = wordlist.ToList();
+            for (int i = 0; i < copyArray.Count; i++)
             {
                 string StemValue = StemWord.Stem(copyArray[i]).Value;
                 copyArray[i] = StemValue;

@@ -11,6 +11,7 @@ namespace TestAdventure
         public static void Initilise()
         {
             Level.InitiliseLevel();
+            //CommandDictonary.InitialiseDefautls();
             Console.SetWindowSize(150, 40); // Default Size = 120 : 30
         }
 
